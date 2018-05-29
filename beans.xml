@@ -10,5 +10,10 @@
 		<property name="taxId">
 		<value>321</value>
 		</property>
+		<property name="address" ref="address"></property>
+	</bean>
+	<bean id="address" class="spring.test.Address">
+		<constructor-arg name="street" value="1 Church Lane"></constructor-arg>
+		<constructor-arg name="postcode" value="9876"></constructor-arg>
 	</bean>
 </beans>
