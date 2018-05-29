@@ -11,8 +11,6 @@ public class App {
 		ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
 		
 		Person person = (Person)context.getBean("person");
-		person.speak();
-		
 		
 		
 		Address address = (Address)context.getBean("address");
