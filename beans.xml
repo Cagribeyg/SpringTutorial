@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-destroy-method="destroy" default-init-method="init">
+	default-destroy-method="destroy" default-init-method="init"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
 	<bean id="person" class="spring.test.Person" scope="singleton"
@@ -31,5 +32,55 @@
 		<constructor-arg name="street" value="1 Church Lane"></constructor-arg>
 		<constructor-arg name="postcode" value="9876"></constructor-arg>
 	</bean>
+	
+	<bean id="address2" class="spring.test.Address">
+		<constructor-arg name="street" value="1 Church Lane"></constructor-arg>
+		<constructor-arg name="postcode" value="9876"></constructor-arg>
+	</bean>
+	
 	<bean id="personfactory" class="spring.test.PersonFactory"></bean>
+	<bean id="basket" class="spring.test.FruitBasket">
+		<constructor-arg value="John Basket"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>apple</value>
+				<value>banana</value>
+				<value>tomato</value>
+				<value>peach</value>
+				<value>chocolate</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="lion" class="spring.test.Animal">
+		<property name="name" value="Kazim"></property>
+		<property name="type" value="lion"></property>
+	</bean>
+	
+	<bean id="elephant" class="spring.test.Animal">
+		<property name="name" value="Igor"></property>
+		<property name="type" value="elephant"></property>
+	</bean>
+	
+	<bean id="snake" class="spring.test.Animal">
+		<property name="name" value="Richard"></property>
+		<property name="type" value="snake"></property>
+	</bean>
+	
+	<bean id="jungle" class="spring.test.Jungle">
+		<property name="largest">
+			<bean  class="spring.test.Animal">
+			<property name="name" value="Igor"></property>
+			<property name="type" value="elephant">
+		</property>
+	</bean>
+		
+		</property>
+		<property name="animals">
+			<list>
+				<ref bean="snake" />
+				<ref bean="lion" />
+			</list>
+		</property>
+		
+	</bean>
 </beans>

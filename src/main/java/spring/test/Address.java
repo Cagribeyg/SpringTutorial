@@ -9,6 +9,38 @@ public class Address {
 		this.street = street;
 		this.postcode = postcode;
 	}
+	
+	
+
+	public Address() {
+		
+	}
+
+
+
+	public String getStreet() {
+		return street;
+	}
+
+
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+
+
+	public String getPostcode() {
+		return postcode;
+	}
+
+
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+
+
 
 	@Override
 	public String toString() {
