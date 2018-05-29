@@ -10,9 +10,15 @@ public class Person {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public Person() {
+		
+	}
 
-
-
+	public static Person getInstance(int id, String name) {
+		System.out.println("Creating Person Factory using factory method");
+		 return new Person(1234, "Bob"); 
+	}
 
 	public void setName(String name) {
 		this.name = name;
