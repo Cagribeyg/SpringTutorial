@@ -17,7 +17,7 @@ public class App {
 		
 		Jungle jungle = (Jungle)context.getBean("jungle");
 		System.out.println(jungle);
-		
+		System.out.println("hello there");
 		((FileSystemXmlApplicationContext)context).close();
 	}
 
